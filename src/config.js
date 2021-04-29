@@ -28,5 +28,11 @@ module.exports = {
             secret: process.env.GODADDY_API_SECRET || '3QRCJbQVGwGkKfPcwQKNNA',
             url: 'https://api.godaddy.com'
         }
+    },
+    validateToken: (req,res,next) => {
+        const apiToken = req.headers['authorization'];
+        
+        if (apiToken == 'process.ENV.API_TOKEN') next();
+        else res.status(400).json({"message": "unauthorized"});
     }
 }
