@@ -28,5 +28,7 @@ module.exports = {
             secret: process.env.GODADDY_API_SECRET || '3QRCJbQVGwGkKfPcwQKNNA',
             url: 'https://api.godaddy.com'
         }
-    }
+    },
+    apiToken: process.env.API_TOKEN
+    
 }
